@@ -22,13 +22,13 @@ jobs:
           docker pull public.ecr.aws/zinclabs/openobserve:$tag-simd
           
           # Retag the image for the new repository
-          docker tag public.ecr.aws/zinclabs/openobserve:$tag ghcr.io/erkexzcx/openobserve:$tag
-          docker tag public.ecr.aws/zinclabs/openobserve:$tag ghcr.io/erkexzcx/openobserve:latest
-          docker tag public.ecr.aws/zinclabs/openobserve:$tag-simd ghcr.io/erkexzcx/openobserve:$tag-simd
-          docker tag public.ecr.aws/zinclabs/openobserve:$tag-simd ghcr.io/erkexzcx/openobserve:latest-simd
+          docker tag public.ecr.aws/zinclabs/openobserve:$tag ghcr.io/${{ github.actor }}/openobserve:$tag
+          docker tag public.ecr.aws/zinclabs/openobserve:$tag ghcr.io/${{ github.actor }}/openobserve:latest
+          docker tag public.ecr.aws/zinclabs/openobserve:$tag-simd ghcr.io/${{ github.actor }}/openobserve:$tag-simd
+          docker tag public.ecr.aws/zinclabs/openobserve:$tag-simd ghcr.io/${{ github.actor }}/openobserve:latest-simd
           
           # Push the image to the new repository
-          docker push ghcr.io/erkexzcx/openobserve:$tag
-          docker push ghcr.io/erkexzcx/openobserve:latest
-          docker push ghcr.io/erkexzcx/openobserve:$tag-simd
-          docker push ghcr.io/erkexzcx/openobserve:latest-simd
+          docker push ghcr.io/${{ github.actor }}/openobserve:$tag
+          docker push ghcr.io/${{ github.actor }}/openobserve:latest
+          docker push ghcr.io/${{ github.actor }}/openobserve:$tag-simd
+          docker push ghcr.io/${{ github.actor }}/openobserve:latest-simd
